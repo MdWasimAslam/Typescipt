@@ -145,5 +145,32 @@ class Teacher extends Person{
     }
 }
 
+class Principal extends Person{
+    override get fullName(){
+         return "Principal " + super.fullName
+     }
+ }
+
 let teacher = new Teacher('John','Smith');
-console.log(teacher.fullName)
+console.log(teacher.fullName);
+
+
+
+
+// ----------- Polymorphism ---------
+printNames([
+    new Student(1,'John','Smith'),
+    new Teacher('Karen','James'),
+    new Principal('Johnny','Peter'),
+]);
+
+
+function printNames(people:Person[]){
+    for(let person of people)
+        console.log(person.fullName)
+}
+
+
+// Private methods are not inherited but protected can be inherited
+
+// Note start with abstract class

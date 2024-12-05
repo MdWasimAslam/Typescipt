@@ -99,5 +99,20 @@ class Teacher extends Person {
         return "Prof " + super.fullName;
     }
 }
+class Principal extends Person {
+    get fullName() {
+        return "Principal " + super.fullName;
+    }
+}
 let teacher = new Teacher('John', 'Smith');
 console.log(teacher.fullName);
+// ----------- Polymorphism ---------
+printNames([
+    new Student(1, 'John', 'Smith'),
+    new Teacher('Karen', 'James'),
+    new Principal('Johnny', 'Peter'),
+]);
+function printNames(people) {
+    for (let person of people)
+        console.log(person.fullName);
+}
