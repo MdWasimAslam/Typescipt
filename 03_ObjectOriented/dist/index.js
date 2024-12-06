@@ -106,7 +106,7 @@ class Principal extends Person {
 }
 let teacher = new Teacher('John', 'Smith');
 console.log(teacher.fullName);
-// ----------- Polymorphism ---------
+console.log('---------------- POLYMORPHISM -------------');
 printNames([
     new Student(1, 'John', 'Smith'),
     new Teacher('Karen', 'James'),
@@ -116,3 +116,23 @@ function printNames(people) {
     for (let person of people)
         console.log(person.fullName);
 }
+// Private methods are not inherited but protected can be inherited
+console.log('---------------- ABSTRACT CLASS -------------');
+class Shape {
+    constructor(color) {
+        this.color = color;
+    }
+}
+class Circle extends Shape {
+    constructor(radius, color) {
+        super(color);
+        this.radius = radius;
+    }
+    render() {
+        console.log('Rendering a circle...');
+    }
+}
+// let shapeObj = new Shape('red') <--- cannot create object from an abstract class
+let circleObj = new Circle(23, 'red');
+console.log(circleObj);
+console.log('---------------- INTERFACES -------------');

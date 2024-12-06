@@ -157,7 +157,8 @@ console.log(teacher.fullName);
 
 
 
-// ----------- Polymorphism ---------
+console.log('---------------- POLYMORPHISM -------------')
+
 printNames([
     new Student(1,'John','Smith'),
     new Teacher('Karen','James'),
@@ -173,4 +174,42 @@ function printNames(people:Person[]){
 
 // Private methods are not inherited but protected can be inherited
 
-// Note start with abstract class
+console.log('---------------- ABSTRACT CLASS -------------')
+
+
+abstract class Shape{
+  constructor(public color:string){}
+
+ abstract render():void;
+}
+
+
+class Circle extends Shape{
+  constructor(public radius:number,color:string){
+    super(color)
+  }
+
+  override render(): void {
+    console.log('Rendering a circle...')
+  }
+}
+
+// let shapeObj = new Shape('red') <--- cannot create object from an abstract class
+
+let circleObj = new Circle(23,'red')
+console.log(circleObj)
+
+
+
+console.log('---------------- INTERFACES -------------')
+
+
+abstract class Calender {
+  constructor(public name:string){}
+
+  abstract addEvent():void
+  abstract removeEvent():void
+}
+
+
+
