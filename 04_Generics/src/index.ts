@@ -57,3 +57,22 @@ function echo <Generic extends {name:string}> (value:Generic):Generic{
 console.log(echo({name:'harry'}));
 
 //------ Start with extending generic classes
+
+interface Product{
+  name:string,
+  price:number
+}
+
+class Store<Generic>{
+  private _objects:Generic[]=[];
+  add(obj:Generic):void{
+    this._objects.push(obj)
+  }
+}
+
+class CompressibleStore<Generic> extends Store <Generic>{
+  compress(){}
+}
+
+let store = new CompressibleStore <Product>();
+store.compress()

@@ -21,9 +21,10 @@ function fetchData(url) {
     return { data: null, error: null };
 }
 let result = fetchData('uri');
-console.log(result.data);
+console.log(result);
 console.log("---------- Generic Contraints ----------");
 function echo(value) {
     return value;
 }
 console.log(echo({ name: 'harry' }));
+//------ Start with extending generic classes

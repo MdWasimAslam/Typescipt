@@ -203,13 +203,31 @@ console.log(circleObj)
 
 console.log('---------------- INTERFACES -------------')
 
+//------- With Interfaces we can define the structure of an object
 
-abstract class Calender {
-  constructor(public name:string){}
 
-  abstract addEvent():void
-  abstract removeEvent():void
+// abstract class Calender{
+//   constructor(public name:string){}
+
+//   abstract addEvent():void;
+//   abstract removeEvent():void;
+// }
+
+
+interface Calender{
+  name:string;
+  addEvent():void;
+  removeEvent():void;
 }
 
 
+class GoogleCalender implements Calender{
+  constructor(public name:string){}
+  addEvent(): void {
+    throw new Error("Method not implemented.");
+  }
+  removeEvent(): void {
+    throw new Error("Method not implemented.");
+  }
 
+}
